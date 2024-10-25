@@ -1,0 +1,26 @@
+<div class="container">
+  <!--  <div class="rangeBox">-->
+  <!--    -->
+  <!--    -->
+  <!--<input *ngIf="range" class="styled-slider slider-progress" type="range"-->
+  <!--       [min]="range.min"-->
+  <!--       [max]="range.max"-->
+  <!--       [step]="range.step"-->
+  <!--       [value]="range.value"-->
+  <!--       (input)="changeRange($event)">-->
+  <!--  </div>-->
+
+  <div class="range-box" *ngIf="range">
+    <input
+      type="range"
+      [min]="range.min"
+      [step]="range.step"
+      [max]="range.max"
+      class="range-input"
+      (input)="changeRange($event)"
+      [ngStyle]="{ 'background-size': progress + '% 100%' }"
+    />
+
+    <div class="value">{{ range.value }}</div>
+  </div>
+</div>
